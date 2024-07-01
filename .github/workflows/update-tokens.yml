@@ -27,7 +27,7 @@ jobs:
         run: npm ci
       
       - name: Build
-        run: npm run build
+        run: npm install readable-stream --save-dev
 
       - name: Create PR 
         uses: peter-evans/create-pull-request@v4

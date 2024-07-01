@@ -4,12 +4,13 @@
   "description": "This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:",
   "main": "index.js",
   "scripts": {
-    "build": "style-dictionary build"
+    "build": "node -r readable-stream/browser.js style-dictionary build"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
   "devDependencies": {
+    "readable-stream": "^3.6.2",
     "style-dictionary": "^4.0.0"
   }
 }
