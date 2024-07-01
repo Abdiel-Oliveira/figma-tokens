@@ -11,26 +11,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Create input JSON
-        id: create-json
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: ${{ github.event.client_payload.filename }}
-          json: ${{ github.event.client_payload.tokens }}
-          dir: 'input'
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
       - name: Install Dependencies
-        run: |
-          npm ci
-          npm install style-dictionary
+        run: npm ci
 
       - name: Build Design Tokens
-        run: npx style-dictionary build
+        run: |
+          npm cache clean --force
+          npm install
+          npm run build
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5

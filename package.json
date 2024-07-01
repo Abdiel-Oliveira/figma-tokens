@@ -10,7 +10,7 @@
   "license": "ISC",
   "keywords": [],
   "devDependencies": {
-    "readable-stream": "^3.6.2",
+    "readable-stream": "^4.5.2",
     "style-dictionary": "^4.0.0"
   }
 }
