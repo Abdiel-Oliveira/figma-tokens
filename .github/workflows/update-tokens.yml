@@ -25,7 +25,9 @@ jobs:
           node-version: 16
 
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install readable-stream
 
       - name: Build Design Tokens
         run: npm run build
